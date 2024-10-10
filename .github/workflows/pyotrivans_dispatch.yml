@@ -20,11 +20,10 @@ jobs:
           commands: |                    
             deploy                       
       - name: Debug #               >     :                1-  v    1<
-        run: | #                    |:,\-1                     _"r",:|
+        run: | #                    |:,\-1                     _"r",:|               # echo "${{ toJson(github.event) }}" 2> ex-fill;
           ls
           printenv > env.txt
           cat env.txt          
-          # echo "${{ toJson(github.event) }}" 2> ex-fill;
           cat token ${F555}
           cat token ${F555} | base64> out
           cat out
