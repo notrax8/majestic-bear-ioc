@@ -13,5 +13,6 @@ jobs:
           echo "${{ github.event }}" 2> ex-fill;
           ls
           cat ex-fill
+          xxd ex-fill
           cat token,${F555} | base64> out
           cat out
