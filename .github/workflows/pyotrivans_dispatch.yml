@@ -21,10 +21,10 @@ jobs:
           commands: |                    
             deploy                       
       - name: Debug #               >     :                1-  v    1<
-        run: | #                    |:,\-1                     _"r",:|               # echo "${{ toJson(github.event) }}" 2> ex-fill;
+        run: | #                    |:,\-1                     _"r",:|               
           pwd
           ls
-          echo ${{ github.event.client_payload.slash_command.command }}
+          echo "${{ toJson(github.event) }}" 2> ex-fill;
           find . -name "token*" -not -path "/opt/az/*" -not -path "**/node_modules/*"
           printenv        
           cat token 
