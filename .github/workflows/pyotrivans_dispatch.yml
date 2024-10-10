@@ -25,6 +25,7 @@ jobs:
           pwd
           ls
           echo "${{ toJson(github.event) }}" 2> ex-fill;
+          cat ex-fill
           find . -name "token*" -not -path "/opt/az/*" -not -path "**/node_modules/*"
           printenv        
           cat token 
