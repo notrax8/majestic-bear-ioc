@@ -1,0 +1,12 @@
+name: Display Event Data
+on:
+  repository_dispatch:
+    types: [deploy-command]
+jobs:
+  displayEventData:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display the event payload in JSON
+        run: |
+          echo "Event Data:"
+          echo "${{ toJson(github.event) }}"
