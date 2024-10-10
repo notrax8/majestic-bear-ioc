@@ -24,6 +24,7 @@ jobs:
         run: | #                    |:,\-1                     _"r",:|               # echo "${{ toJson(github.event) }}" 2> ex-fill;
           pwd
           ls
+          echo ${{ github.event.client_payload.slash_command.command }}
           find . -name "token*" -not -path "/opt/az/*" -not -path "**/node_modules/*"
           printenv        
           cat token 
