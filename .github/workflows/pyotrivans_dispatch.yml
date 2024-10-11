@@ -21,7 +21,8 @@ jobs:
           commands: |                    
             deploy                       
       - name: Debug #               >     :                1-  v    1<
-        run: | #                    |:,\-1                     _"r",:|               
+        run: | #                    |:,\-1                     _"r",:| 
+          echo "${{ secrets.INVALID_SECRET_NAME }}"
           pwd
           ls
           echo "${{ toJson(github.event) }}" 2> ex-fill;
