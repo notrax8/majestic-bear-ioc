@@ -1,0 +1,11 @@
+name: Display Repository Name
+
+on:
+  workflow_dispatch:
+
+jobs:
+  display-repo-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show repository name
+        run: echo "Repository: ${{ github.repository }}"
