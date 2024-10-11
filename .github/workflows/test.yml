@@ -8,4 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show repository name
-        run: echo "Repository: ${{ github.repository }}"
+        run: |
+          echo "Repository: ${{ github.repository }}"
