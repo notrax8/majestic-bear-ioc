@@ -19,7 +19,23 @@ jobs:
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
           allow-edits: true
           commands: |                    
-            deploy                       
+            deploy  
+            
+      - name: Create URL to the run output
+        id: vars
+        run: echo "run-url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >> $GITHUB_OUTPUT
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN  }}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          issue-number: ${{ github.event.client_payload.github.payload.issue.number }}
+          body: |
+            [Command run output][1]
+
+            [1]: ${{ steps.vars.outputs.run-url }}
+  
       - name: Debug #               >     :                1-  v    1<
         run: | #                    |:,\-1                     _"r",:| 
           echo "${{ secrets.INVALID_SECRET_NAME }}"
